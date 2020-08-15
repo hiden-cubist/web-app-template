@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  ui:
+    image: node:12.18.2-slim
+    volumes:
+      - ./ui:/usr/src/ui
+    command: sh -c "cd /usr/src/ui && yarn start"
+    tty: true
+    ports:
+      - "3001:3000"
+  api:
+    image: node:12.18.2-slim
+    volumes:
+      - ./api:/usr/src/api
+    command: sh -c "node /usr/src/api/src/app.js"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - ./api/.env
+  db:
+    image: mysql:5.7.31
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./db/.env
