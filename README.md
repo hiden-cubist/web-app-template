@@ -1,10 +1,5 @@
 # web-app-template
 
-## 起動
-```
-docker-compose up
-```
-
 ## 環境変数
 
 ### api
@@ -13,3 +8,16 @@ docker-compose up
 
 ### db
 - MYSQL_ROOT_PASSWORD
+
+## 起動
+```
+docker-compose up
+```
+
+## 実行結果
+
+### api
+```
+$ curl localhost:3000/users
+[{"id":1,"name":"Alice"},{"id":2,"name":"Bob"}]
+```
