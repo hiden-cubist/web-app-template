@@ -2,5 +2,5 @@
 	"name": "web-app-template",
 	"dockerComposeFile": "../docker-compose.yml",
 	"service": "ui",
-	"workspaceFolder": "/usr/src",
+	"workspaceFolder": "/usr/src/ui",
 }
