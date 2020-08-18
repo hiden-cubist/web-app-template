@@ -12,6 +12,9 @@ const connection = mysql.createConnection({
 });
 
 const cors = require('cors');
+const corsOptions = {
+  origin: 'localhost'
+}
 app.use(cors());
 
 app.get('/users', (request, response) => {
