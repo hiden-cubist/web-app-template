@@ -2,11 +2,17 @@ version: '3.8'
 services:
   ui:
     build: ui
+    volumes:
+      - ./ui:/usr/src/ui
+      - /usr/src/ui/node_modules
     ports:
       - "3001:3000"
     tty: true
   api:
     build: api
+    volumes:
+      - ./api:/usr/src/api
+      - /usr/src/api/node_modules
     ports:
       - "3000:3000"
     depends_on:

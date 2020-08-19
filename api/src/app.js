@@ -5,10 +5,10 @@ const env = process.env;
 
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-  host: db,
+  host: 'db',
   user: env.MYSQL_USER,
   password: env.MYSQL_PASSWORD,
-  database: test
+  database: 'test'
 });
 
 const cors = require('cors');
@@ -18,7 +18,7 @@ const corsOptions = {
 app.use(cors());
 
 app.get('/users', (request, response) => {
-  const sql = "SELECT * FROM users"
+  const sql = 'SELECT * FROM users'
   connection.query(sql, (error, result, fields) => {
     if (error) throw error;
     response.send(result);
