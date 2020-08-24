@@ -1,4 +1,6 @@
 # web-app-template
+![main](https://github.com/hiden-cubist/web-app-template/workflows/main/badge.svg)
+
 React+Express+MySQLをDockerで構成するテンプレート
 
 ## 起動
